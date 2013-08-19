@@ -1,0 +1,12 @@
+<h1>Listing marks</h1>
+
+<br />
+
+
+<ul>
+    <% @marks.each do |mark| %>
+        <ol><%= image_tag (mark.assets.first.asset.url(:thumb)), class: "img-thumbnail" %> </ol>
+    <% end %>
+
+</ul>
+

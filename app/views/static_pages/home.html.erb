@@ -1,0 +1,16 @@
+<!-- <h1>StaticPages#home</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+ -->
+<!-- <div class="container clear-top">
+
+</div>
+ -->
+
+
+  <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+    <% Mark.all.each do |mark| %>
+      <%#= image_tag( mark.assets.first.asset.url(:thumb), :data => {:gallery => "gallery"}, :title => mark.name, class: "img-thumbnail") %>  
+      <%= link_to image_tag( mark.assets.first.asset.url(:thumb), :data => {:gallery => "gallery"}, :title => mark.name, class: "img-thumbnail"), mark_path(mark) %>  
+    <% end %>
+  </div>
+

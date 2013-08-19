@@ -1,0 +1,36 @@
+<p>
+  <strong>Mark:</strong>
+  <%= @product.mark.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Side:</strong>
+  <%= @product.side %>
+</p>
+
+<p>
+  <%= image_tag  @product.assets.first.asset.url(:medium) if @product.assets.present? %>
+  
+</p>
+
+<div class="form-actions">
+  <%= link_to "New", new_admin_product_path, class: 'btn btn-primary'  %>
+  <%= link_to 'Edit', edit_admin_product_path(@product), class: 'btn'  %> 
+  <%= link_to 'Back', admin_products_path, class: 'btn'  %>
+</div>
+
+<div class="input-block-level">
+  <%= link_to "Estou interessado", new_contact_path(product: @product), class: 'btn btn-success' %>
+</div>
+
+

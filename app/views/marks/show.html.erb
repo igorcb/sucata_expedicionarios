@@ -1,0 +1,17 @@
+
+<p>
+  <strong>Mark:</strong>
+  <%= @mark.name %>
+  <br />
+  <%= image_tag @mark.assets.first.asset.url(:medium) if @mark.assets.present? %> 
+</p>
+
+<hr>
+
+<h3>Products</h3>
+
+<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+  <% @mark.products.each do |product| %>
+    <%= link_to image_tag(product.assets.first.asset.url(:thumb)), product_path(product), data: {:toggle=>"modal", :gallery => "gallery"} if product.assets.present? %>
+  <% end %>
+</div>

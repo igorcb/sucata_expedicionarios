@@ -1,0 +1,13 @@
+<h1>Menssagem para Compra de Pecas</h1>
+<h2>Data do Envio: <%= Time.now.strftime("%d/%m/%Y %H:%M") %></h2>
+
+<p><strong>Visitante: </strong> <%= @contact['name'] %></p>
+
+<p><strong>Email: </strong> <%= @contact['email'] %></p>
+
+<% if @contact['suject'].present? %>
+	<p><strong>Assunto:</strong><%= @contact['subject'] %></p>
+<% end %>
+
+<p> <strong>Message:</strong> </p>
+<p><%= @contact['message'] %></p>

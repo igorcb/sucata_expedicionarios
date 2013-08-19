@@ -1,0 +1,16 @@
+<h1>Listing products</h1>
+
+<br>
+
+<ul>
+  <% @products.each do |product| %>
+    <ol>
+      <%= product.name %>
+      <p>
+        <%= image_tag product.assets.first.asset.url(:thumb) if product.assets.present? %>
+      </p>
+    </ol>
+  <% end %>
+</ul>
+
+
