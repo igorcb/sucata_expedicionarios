@@ -12,7 +12,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Expedicionários Peças", '#', id: "logo" %>
+      <%= link_to "", '#', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",    home_path %></li>
@@ -35,15 +35,19 @@
   </div>
 </header>
 
+
+<div id="main" role="main">
+      <div class="container">
+        <div class="content">
+
+<%= image_tag("ligue-1212x180-cinza.jpg")  %>
+
 <%= form_tag "", method: :get, class: "form-wrapper cf" do %>
   <%= label_tag :search, "what you looking for?" %>
   <%= text_field_tag :search, params[:search],  placeholder: "Fazer a busca funcionar...", required: true %>
   <%= button_tag "Search" %>
 <% end %>
 
-<div id="main" role="main">
-      <div class="container">
-        <div class="content">
            <div class="row">
             <div class="span12">
               <%= render 'shared/error_messages' %>
