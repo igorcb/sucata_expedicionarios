@@ -1,0 +1,27 @@
+<p>
+  <strong>Mark:</strong>
+  <%= @car.mark.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+	<% @car.assets.each do |asset|  %>
+    <%= image_tag asset.asset.url(:thumb) %>
+  <% end %>
+</p>
+
+<div class="form-actions">
+  <%= link_to "New", new_admin_car_path, class: 'btn btn-primary'  %>
+  <%= link_to 'Edit', edit_admin_car_path(@car), class: 'btn'  %> 
+  <%= link_to 'Back', admin_cars_path, class: 'btn'  %>
+</div>
+
+<div class="input-block-level">
+  <%= link_to "Estou interessado", new_contact_path(car: @car), class: 'btn btn-success' %>
+</div>
+
+

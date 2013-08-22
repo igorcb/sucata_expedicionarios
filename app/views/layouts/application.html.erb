@@ -29,6 +29,9 @@
               </ul>
             </li>
           <li><%= link_to "Contato", new_contact_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Logout", signout_path, method: "delete" %></li>
+          <% end  %>
         </ul>
       </nav>
     </div>

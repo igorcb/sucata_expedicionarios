@@ -1,4 +1,6 @@
 class Admin::MarksController < ApplicationController
+  before_filter :authenticate
+
   before_action :set_mark, only: [:show, :edit, :update, :destroy]
 
   # GET /marks
@@ -65,6 +67,7 @@ class Admin::MarksController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_mark
       @mark = Mark.find(params[:id])

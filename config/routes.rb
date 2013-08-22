@@ -3,11 +3,13 @@ Sucata::Application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   namespace :admin do
-    resources :products, :categories, :marks
+    resources :products, :categories, :marks, :cars
   end  
 
   resources :products, only: [:show, :index]
   resources :marks, only: [:show, :index]
+
+  match '/signout', to: 'static_pages#destroy', via: :delete
 
   match '/empresa', to: 'static_pages#empresa', via: 'get'
   match '/home', to: 'static_pages#home', via: 'get'

@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  before_filter :authenticate
+  
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
