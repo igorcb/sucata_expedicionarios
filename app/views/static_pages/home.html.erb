@@ -18,7 +18,7 @@
 
 <div id="gallery-car" data-toggle="modal-gallery" data-target="#modal-gallery">
   <% Car.all.each do |car| %>
-    <%= link_to image_tag( car.assets.first.asset.url(:thumb)), admin_car_gallery_car_path(car.id),  data: {:toggle=>"modal", :target=> "#modalProduct_#{car.id}"} %> 
+    <%= link_to image_tag( car.assets.first.asset.url(:thumb)), car_gallery_car_path(car.id),  data: {:toggle=>"modal", :target=> "#modalProduct_#{car.id}"} %> 
 		<div id="modalProduct_<%= car.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby=<%= car.name %> aria-hidden="true">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

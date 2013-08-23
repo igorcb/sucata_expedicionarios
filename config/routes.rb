@@ -11,6 +11,10 @@ Sucata::Application.routes.draw do
       #end
     end
   end  
+ 
+  resources :cars, only: [] do
+    get 'gallery_car'
+  end
 
   resources :products, only: [:show, :index]
   resources :marks, only: [:show, :index]
