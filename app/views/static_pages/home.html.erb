@@ -7,7 +7,7 @@
  -->
 
 
-<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+<div id="gallery-mark" data-toggle="modal-gallery" data-target="#modal-gallery">
   <% Mark.all.each do |mark| %>
     <%#= image_tag( mark.assets.first.asset.url(:thumb), :data => {:gallery => "gallery"}, :title => mark.name, class: "img-thumbnail") %>  
     <%= link_to image_tag( mark.assets.first.asset.url(:thumb), :data => {:gallery => "gallery"}, :title => mark.name, class: "img-thumbnail"), mark_path(mark) %>  
@@ -16,10 +16,10 @@
 
 <hr />
 
-<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+<div id="gallery-car" data-toggle="modal-gallery" data-target="#modal-gallery">
   <% Car.all.each do |car| %>
-    <%= link_to image_tag( car.assets.first.asset.url(:thumb)), admin_car_gallery_car_path(car.id),  data: {:toggle=>"modal", :target=> "#modalProduct"} %> 
-		<div id="modalProduct" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <%= link_to image_tag( car.assets.first.asset.url(:thumb)), admin_car_gallery_car_path(car.id),  data: {:toggle=>"modal", :target=> "#modalProduct_#{car.id}"} %> 
+		<div id="modalProduct_<%= car.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 		    <h3 id="myModalLabel"><%#= car.name.upcase %></h3>

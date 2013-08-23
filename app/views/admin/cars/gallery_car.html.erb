@@ -1,4 +1,36 @@
-<% @car.assets.each do |asset| %>
-   <%= image_tag (asset.asset.url(:original)) %>
-<% end  %>
+<div id="well">
+  <div id="myCarousel" class="carousel slide">
 
+	  <!-- Carousel items -->
+	  <div class="carousel-inner">
+
+	      <div class="item active">
+	          <div class="">
+	            <div class="">
+	              <!-- <a href="ligue-1212x180-cinza" class="thumbnail"><img src="<%#= asset_path( 'ligue-1212x180-cinza.jpg' ) %>" alt="Oil Barrons" style="max-width:100%;" /></a></div> -->
+	              <%#= image_tag asset.asset.url(:thumb) %>
+	              <%= image_tag @car.assets.first.asset.url(:original) if @car.assets.present? %> 
+	            </div>
+	          </div>
+	      </div>
+
+	  <% @car.assets.each do |asset|  %>
+	      <div class="item">
+	          <div class="">
+	            <div class="">
+	              <!-- <a href="ligue-1212x180-cinza" class="thumbnail"><img src="<%#= asset_path( 'ligue-1212x180-cinza.jpg' ) %>" alt="Oil Barrons" style="max-width:100%;" /></a></div> -->
+	              <%#= image_tag asset.asset.url(:original), alt: "Oil Barrons", style:"max-width:100%; vertical-align: middle;" %>
+	              <%#= image_tag @car.assets.first.asset.url(:medium) if @car.assets.present? %> 
+	              <%= image_tag (asset.asset.url(:original)), alt: "Oil Barrons", style:"max-width:100%; vertical-align: middle;" %>
+	            </div>
+	          </div>
+	      </div>
+	    <% end  %>
+
+	  </div><!--/carousel-inner-->
+
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+  </div><!--/myCarousel-->
+
+</div><!--/well-->
