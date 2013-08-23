@@ -11,7 +11,7 @@ class Admin::CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-      @car = Car.find(params[:id])
+    @cars = Car.all
   end
 
   # GET /cars/1
