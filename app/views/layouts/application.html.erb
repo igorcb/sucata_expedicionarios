@@ -26,6 +26,7 @@
                 <li><%= link_to "Mark", admin_marks_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Product", admin_products_path %></li>
+                <li><%= link_to "Car", admin_cars_path %></li>
               </ul>
             </li>
           <li><%= link_to "Contato", new_contact_path %></li>
@@ -43,13 +44,13 @@
       <div class="container">
         <div class="content">
 
-<%= image_tag("ligue-1212x180-cinza.jpg")  %>
+          <%= image_tag("ligue-1212x180-cinza.jpg")  %>
 
-<%= form_tag "", method: :get, class: "form-wrapper cf" do %>
-  <%= label_tag :search, "what you looking for?" %>
-  <%= text_field_tag :search, params[:search],  placeholder: "Fazer a busca funcionar...", required: true %>
-  <%= button_tag "Search" %>
-<% end %>
+          <%= form_tag "", method: :get, class: "form-wrapper cf" do %>
+            <%= label_tag :search, "what you looking for?" %>
+            <%= text_field_tag :search, params[:search],  placeholder: "Fazer a busca funcionar...", required: true %>
+            <%= button_tag "Search" %>
+          <% end %>
 
            <div class="row">
             <div class="span12">
@@ -57,14 +58,16 @@
               <%= yield %>
             </div>
           </div>
+<!--        
           <footer>
           </footer>
-        </div>
+ -->        </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
+
 <footer>
 
-<div id="footer">
+  <div id="footer">
     <p class="left">Left aligned text here<br />Next line here </p>
     <p class="right">Av. dos Expedicionários (Bernardo Manuel), 10935 <br />
                      Itapery - Fortaleza - Ceará <br />
@@ -72,6 +75,7 @@
     </p>
     <p class="center">Center Text here<br />Next line here </p>
   </div>  
+  
 </footer>
 
 </body>

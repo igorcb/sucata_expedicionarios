@@ -3,7 +3,13 @@ Sucata::Application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   namespace :admin do
-    resources :products, :categories, :marks, :cars
+    resources :products, :categories, :marks
+    resources :cars do
+      get 'gallery_car'
+      #collection do
+      #  get "gallery_car/:id"
+      #end
+    end
   end  
 
   resources :products, only: [:show, :index]

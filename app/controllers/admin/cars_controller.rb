@@ -3,10 +3,15 @@ class Admin::CarsController < ApplicationController
 
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
+  def gallery_car
+    @car = Car.find(params[:car_id].to_i) 
+    render :layout => false
+  end
+
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+      @car = Car.find(params[:id])
   end
 
   # GET /cars/1

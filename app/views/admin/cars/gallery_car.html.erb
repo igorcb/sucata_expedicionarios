@@ -1,0 +1,4 @@
+<% @car.assets.each do |asset| %>
+   <%= image_tag (asset.asset.url(:original)) %>
+<% end  %>
+
