@@ -1,5 +1,5 @@
 <div id="well">
-  <div id="myCarousel" class="carousel slide">
+  <div id="myCarousel_<%= @car.id %>" class="carousel slide">
 
 	  <!-- Carousel items -->
 	  <div class="carousel-inner">
@@ -29,8 +29,8 @@
 
 	  </div><!--/carousel-inner-->
 
-	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-	  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+	  <a class="left carousel-control" href="#myCarousel_<%= @car.id %>" data-slide="prev">‹</a>
+	  <a class="right carousel-control" href="#myCarousel_<%= @car.id %>" data-slide="next">›</a>
   </div><!--/myCarousel-->
 
 </div><!--/well-->
