@@ -54,7 +54,12 @@
 
            <div class="row">
             <div class="span12">
-              <%= render 'shared/error_messages' %>
+              <%#= render 'shared/error_messages' %>
+              <% flash.each do |key, value| %>
+                <% name = :notice ? 'success' : 'error'  %>
+                <%#= content_tag(:div, value, class: "alert alert-#{key}") %>
+                <%= content_tag(:div, value, class: "alert alert-#{name}") %>
+              <% end %>
               <%= yield %>
             </div>
           </div>

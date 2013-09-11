@@ -1,12 +1,12 @@
 <%= form_for @contact, :html => {class: "form-horizontal" }  do |f| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
   
   <fieldset>
     
     <legend></legend>
 
     <div class="form-group">
-      <%= f.label :name, "Name", class: 'control-label'  %>
+      <%= f.label :name, "Nome", class: 'control-label'  %>
       <div class="controls">
         <%= f.text_field :name, class: 'text_field'  %>
       </div>
@@ -20,21 +20,21 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :phone, "Phone", class: 'control-label'  %>
+      <%= f.label :phone, "Telefone", class: 'control-label'  %>
       <div class="controls">
         <%= f.text_field :phone, class: 'text_field'  %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :subject, "Subject", class: 'control-label'  %>
+      <%= f.label :subject, "Assunto", class: 'control-label'  %>
       <div class="controls">
         <%= f.text_field :subject, value: @product_mark_category, class: 'text_field'  %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :message, "Message", class: 'control-label'  %>
+      <%= f.label :message, "Messagem", class: 'control-label'  %>
       <div class="controls">
         <%= f.text_area :message, value: @product_name, class: 'text_field'  %>
       </div>
