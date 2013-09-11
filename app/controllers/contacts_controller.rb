@@ -9,12 +9,15 @@ class ContactsController < ApplicationController
   def create
   	@contact = Contact.new(params.require(:contact).permit(:name, :email, :phone, :subject, :message))
 
+    respond_to do |format|
   	if @contact.save!
   		ContactMailer.contact_message(params[:contact]).deliver
   		flash[:notice] = 'Menssagem enviada com sucesso'
   		redirect_to :action => 'new'
-  		return
-  	end
+  	else
+      format.html { render action: 'new' }
+      format.json { render json: @contac.errors, status: :unprocessable_entity }
+   	end
 
   	return :action => 'new'
 
