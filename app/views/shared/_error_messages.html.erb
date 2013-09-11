@@ -1,22 +1,22 @@
-<!-- 
-<%# flash.each do |name, msg| %>
-  <%# if msg.is_a?(String) %>
-    <div class="alert alert-<%#= name == :notice ? "notice" : "error" %>">
-      <a class="close" data-dismiss="alert">&#215;</a>
-      <%#= content_tag :div, msg, :id => "flash_#{name}" %>
-    </div>
-  <%# end %>
-<%# end %> -->
 
-<% if object.errors.any? %>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name == :notice ? "notice" : "error" %>">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- <%# if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-error">
-      The form contains <%= pluralize(object.errors.count, "error") %>.
+      The form contains <%#= pluralize(object.errors.count, "error") %>.
     </div>
     <ul>
-    <% object.errors.full_messages.each do |msg| %>
-      <li>* <%= msg %></li>
-    <% end %>
+    <%# object.errors.full_messages.each do |msg| %>
+      <li>* <%#= msg %></li>
+    <% #end %>
     </ul>
   </div>
-<% end %>
+<%# end %> -->
