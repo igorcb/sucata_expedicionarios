@@ -1,6 +1,6 @@
 
 <p>
-  <strong>Mark:</strong>
+  <strong>Marca:</strong>
   <%= @mark.name %>
   <br />
   <%= image_tag @mark.assets.first.asset.url(:medium) if @mark.assets.present? %> 
@@ -8,14 +8,14 @@
 
 
 <div class="form-actions">
-  <%= link_to 'New', new_admin_mark_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Edit', edit_admin_mark_path(@mark), :class => 'btn' %>
-  <%= link_to 'Back', admin_marks_path, :class => 'btn' %>
+  <%= link_to 'Novo', new_admin_mark_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Editar', edit_admin_mark_path(@mark), :class => 'btn' %>
+  <%= link_to 'Voltar', admin_marks_path, :class => 'btn' %>
 </div>
 
 <hr>
 
-<h3>Products</h3>
+<h3>Produtos</h3>
 
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
   <% @mark.products.each do |product| %>

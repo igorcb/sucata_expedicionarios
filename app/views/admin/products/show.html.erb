@@ -1,32 +1,31 @@
 <p>
-  <strong>Mark:</strong>
+  <strong>Marca:</strong>
   <%= @product.mark.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Categoria:</strong>
   <%= @product.category.name %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Side:</strong>
-  <%= @product.side %>
+  <strong>Lado:</strong>
+  <%= @product.side_string %>
 </p>
 
 <p>
   <%= image_tag  @product.assets.first.asset.url(:medium) if @product.assets.present? %>
-  
-</p>
+  </p>
 
 <div class="form-actions">
-  <%= link_to "New", new_admin_product_path, class: 'btn btn-primary'  %>
-  <%= link_to 'Edit', edit_admin_product_path(@product), class: 'btn'  %> 
-  <%= link_to 'Back', admin_products_path, class: 'btn'  %>
+  <%= link_to "Novo", new_admin_product_path, class: 'btn btn-primary'  %>
+  <%= link_to 'Editar', edit_admin_product_path(@product), class: 'btn'  %> 
+  <%= link_to 'Voltar', admin_products_path, class: 'btn'  %>
 </div>
 
 <div class="input-block-level">
