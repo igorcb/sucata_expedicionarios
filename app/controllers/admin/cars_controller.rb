@@ -37,7 +37,7 @@ class Admin::CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to [:admin, @car], notice: 'car was successfully created.' }
+        format.html { redirect_to [:admin, @car], notice: 'carro criado com sucesso.' }
 
         format.json { render action: 'show', status: :created, location: [:admin, @car] }
       else
@@ -52,7 +52,7 @@ class Admin::CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to [:admin, @car], notice: 'car was successfully updated.' }
+        format.html { redirect_to [:admin, @car], notice: 'carro atualizado com sucesso..' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -32,7 +32,7 @@ class Admin::MarksController < ApplicationController
 
     respond_to do |format|
       if @mark.save
-        format.html { redirect_to [:admin, @mark], notice: 'Mark was successfully created.' }
+        format.html { redirect_to [:admin, @mark], notice: 'Marca criada com sucesso.' }
 
         format.json { render action: 'show', status: :created, location: [:admin, @mark] }
       else
@@ -47,7 +47,7 @@ class Admin::MarksController < ApplicationController
   def update
     respond_to do |format|
       if @mark.update(mark_params)
-        format.html { redirect_to [:admin, @mark], notice: 'Mark was successfully updated.' }
+        format.html { redirect_to [:admin, @mark], notice: 'Marca atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
