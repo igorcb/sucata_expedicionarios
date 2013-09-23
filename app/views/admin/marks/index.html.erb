@@ -15,7 +15,7 @@
   <tbody>
     <% @marks.each do |mark| %>
       <tr>
-        <td><%= image_tag (mark.assets.first.asset.url(:thumb)), class: "img-thumbnail" %></td>
+        <td><%= image_tag (mark.assets.first.asset.url(:thumb)), class: "img-thumbnail" if mark.assets.present? %></td>
         <td><%= link_to 'Exibir', [:admin, mark] %></td>
         <td><%= link_to 'Editar', edit_admin_mark_path(mark) %></td>
         <td><%= link_to 'Deletar', [:admin, mark], method: :delete, data: { confirm: 'Deseja deletar o registro?' } %></td>

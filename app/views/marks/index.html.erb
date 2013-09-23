@@ -2,10 +2,10 @@
 
 <br />
 
-
 <ul>
     <% @marks.each do |mark| %>
-        <ol><%= image_tag (mark.assets.first.asset.url(:thumb)), class: "img-thumbnail" %> </ol>
+        <%# imagem_mark = mark.assets.nil? ?  : "" %>
+        <ol><%= image_tag (mark.assets.first.asset.url(:thumb)), class: "img-thumbnail" if mark.assets.present? %> </ol>
     <% end %>
 
 </ul>
